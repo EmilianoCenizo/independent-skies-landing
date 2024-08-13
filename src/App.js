@@ -1,22 +1,14 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <h1>Bienvenido a mi sitio web</h1>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Este es un sitio web de una sola página creado con React y alojado en GitHub Pages.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
