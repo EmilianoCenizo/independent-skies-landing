@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import backgroundImage from './assets/images/screen2.png';
 
 const Container = styled.div`
   scroll-snap-type: y mandatory;
@@ -7,11 +8,10 @@ const Container = styled.div`
   overflow-x: hidden;
   height: 100vh;
   font-family: 'Montserrat', sans-serif;
-  background-color: #0A0A0A;
-  color: #FFFFFF;
+  background-color: #2A1E1B; /* Fondo marrón oscuro */
+  color: #F2E3D5; /* Texto color arena */
   position: relative;
 `;
-
 const Section = styled.section`
   scroll-snap-align: start;
   height: 100vh;
@@ -22,6 +22,40 @@ const Section = styled.section`
   padding: 20px;
   overflow: hidden;
 `;
+
+const TitleSection = styled(Section)`
+  flex-direction: column;
+  background: url(${backgroundImage}) center center/cover no-repeat;
+  color: #F2E3D5;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+`;
+const TextBackground = styled.div`
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semitransparente */
+  padding: 10px;
+  border-radius: 5px;
+`;
+
+const Title = styled.h1`
+  font-size: 4rem;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Sombra negra sutil */
+`;
+
+const Subtitle = styled.h2`
+  font-size: 2rem;
+  color: #8B3A3A; /* Rojo oscuro */
+`;
+
+const Image = styled.img`
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border: 3px solid #8B3A3A; /* Borde rojo marciano */
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(211, 84, 0, 0.7); /* Naranja */
+`;
+
 
 const Navbar = styled.nav`
   position: fixed;
@@ -48,35 +82,27 @@ const NavItem = styled.a`
   }
 `;
 
-const TitleSection = styled(Section)`
-  flex-direction: column;
-  background: url('https://via.placeholder.com/1920x1080') center center/cover no-repeat;
-`;
-
-const Title = styled.h1`
-  font-size: 4rem;
-  margin-bottom: 20px;
-  color: #FFFFFF;
-  text-shadow: 2px 2px 15px rgba(0, 163, 224, 0.8);
-`;
-
-const Subtitle = styled.h2`
-  font-size: 2rem;
-  color: #F5A623;
-`;
-
-const Image = styled.img`
-  max-width: 100%;
-  height: auto;
-  margin-top: 20px;
-  border: 3px solid #00A3E0;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 163, 224, 0.7);
-`;
-
 const ContentSection = styled(Section)`
   flex-direction: column;
   text-align: center;
+`;
+const Section1TextBackground = styled.div`
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semitransparente */
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+`;
+
+const Section1TextContainer = styled.div`
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: justify;
+  font-size: 1.2rem;
+  line-height: 1.8;
+
+  p {
+    color: #F2E3D5; /* Color del texto */
+  }
 `;
 
 const TextContainer = styled.div`
@@ -135,21 +161,22 @@ function App() {
       </Navbar>
 
       <TitleSection id="section1">
-        <Title>Independent Skies</Title>
+      <Title>Independent Skies</Title>
         <Image src="https://via.placeholder.com/600x300" alt="Game Image Placeholder" />
-        <TextContainer>
-          <p>
-            Upcoming sci-fi city builder with focus on surviving, developing, and getting independence from an ever changing Earth government.
-          </p>
-          <p>
-            Embark on an adventure for autonomy and self sufficiency by leaving the cradle of humanity behind and start a new colony on a remote place. Build, manufacture and survive while enduring the unearthly conditions of the place, and when the sentiment is ready, declare independence.
-          </p>
-          <p>
-            Independent skies is in a really early stage of development with some prototypes and builds for testing.
-          </p>
-        </TextContainer>
-      </TitleSection>
-
+  <Section1TextBackground>
+    <Section1TextContainer>
+      <p>
+        Upcoming sci-fi city builder with focus on surviving, developing, and getting independence from an ever changing Earth government.
+      </p>
+      <p>
+        Embark on an adventure for autonomy and self sufficiency by leaving the cradle of humanity behind and start a new colony on a remote place. Build, manufacture and survive while enduring the unearthly conditions of the place, and when the sentiment is ready, declare independence.
+      </p>
+      <p>
+        Independent skies is in a really early stage of development with some prototypes and builds for testing.
+      </p>
+    </Section1TextContainer>
+  </Section1TextBackground>
+</TitleSection>
       <ContentSection id="section3">
         <TextContainer>
           <ParagraphImage src="https://via.placeholder.com/150" alt="Paragraph Image Placeholder" />
@@ -192,7 +219,8 @@ function App() {
       </ContentSection>
 
       <ContentSection id="section6">
-        <TextContainer>
+        <Section1TextBackground>
+    <Section1TextContainer>
           <p>
             Do you want to be part of Independent Skies’ development? You are welcome to help testing and give feedback!
           </p>
@@ -202,7 +230,8 @@ function App() {
           <p>
             Join our discord to know more: LINK
           </p>
-        </TextContainer>
+        </Section1TextContainer>
+        </Section1TextBackground>
       </ContentSection>
 
       <Footer>
