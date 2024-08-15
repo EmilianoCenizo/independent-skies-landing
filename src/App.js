@@ -8,10 +8,11 @@ const Container = styled.div`
   overflow-x: hidden;
   height: 100vh;
   font-family: 'Montserrat', sans-serif;
-  background-color: #2A1E1B; /* Fondo marrón oscuro */
-  color: #F2E3D5; /* Texto color arena */
+  background-color: #1B1B1B; /* Fondo más oscuro */
+  color: #F2E3D5; /* Texto color arena claro */
   position: relative;
 `;
+
 const Section = styled.section`
   scroll-snap-align: start;
   height: 100vh;
@@ -21,6 +22,13 @@ const Section = styled.section`
   align-items: center;
   padding: 20px;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    width: 90vw;
+    padding: 15px;
+    height: 100vh;
+    overflow-y: auto; /* Permite el desplazamiento interno */
+  }
 `;
 
 const TitleSection = styled(Section)`
@@ -28,6 +36,19 @@ const TitleSection = styled(Section)`
   background: url(${backgroundImage}) center center/cover no-repeat;
   color: #F2E3D5;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  padding-top: 100px; /* Ajuste el padding-top para despejar el menú */
+
+  @media (max-width: 768px) {
+    padding-top: 120px; /* Mayor espacio en dispositivos móviles */
+  }
+
+  @media (max-width: 480px) {
+    padding-top: 140px; /* Espacio adicional para pantallas más pequeñas */
+  }
+
+  @media (max-width: 375px) {
+    padding-top: 150px; /* Máximo espacio para pantallas muy pequeñas */
+  }
 `;
 const TextBackground = styled.div`
   background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semitransparente */
@@ -36,10 +57,27 @@ const TextBackground = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 4rem;
+  font-size: 3rem;
   margin-bottom: 20px;
   color: #FFFFFF;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Sombra negra sutil */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  margin-top: 60px;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 2.2rem;
+    margin-top: 50px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.6rem;
+    margin-top: 40px; 
+  }
+
+  @media (max-width: 375px) {
+    font-size: 1.4rem; /* Tamaño reducido para pantallas muy pequeñas */
+    margin-top: 30px; /* Menor margen superior */
+  }
 `;
 
 const Subtitle = styled.h2`
@@ -51,29 +89,37 @@ const Image = styled.img`
   max-width: 100%;
   height: auto;
   margin-top: 20px;
-  border: 3px solid #8B3A3A; /* Borde rojo marciano */
+  border: 3px solid #8B3A3A;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(211, 84, 0, 0.7); /* Naranja */
-`;
+  box-shadow: 0 0 20px rgba(211, 84, 0, 0.7);
 
+  @media (max-width: 768px) {
+    max-width: 80%; /* Reduce el tamaño de la imagen en móviles */
+  }
+`;
 
 const Navbar = styled.nav`
   position: fixed;
   top: 0;
   width: 100%;
   background-color: #0A0A0A;
-  padding: 15px;
+  padding: 8px 0;
   display: flex;
   justify-content: space-around;
   z-index: 1000;
   border-bottom: 2px solid #00A3E0;
+
+  @media (max-width: 375px) {
+    font-size: 0.7rem; /* Reducir el tamaño de fuente para pantallas más pequeñas */
+    padding: 5px 0; /* Reducir el padding para pantallas más pequeñas */
+  }
 `;
 
 const NavItem = styled.a`
   color: #FFFFFF;
-  margin: 0 15px;
+  margin: 0 10px; /* Reduce el espacio entre los elementos */
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1rem; /* Tamaño de fuente más pequeño */
   cursor: pointer;
   transition: color 0.3s ease;
 
@@ -85,12 +131,25 @@ const NavItem = styled.a`
 const ContentSection = styled(Section)`
   flex-direction: column;
   text-align: center;
+  padding-top: 80px; /* Espacio adicional para el encabezado */
+
+  @media (max-width: 768px) {
+    overflow-y: auto;
+    padding-top: 100px; /* Más espacio en pantallas pequeñas */
+  }
 `;
 const Section1TextBackground = styled.div`
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semitransparente */
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 20px;
   border-radius: 10px;
   margin-top: 20px;
+  margin-right: 10px; /* Asegura margen a la derecha */
+  margin-left: 10px;
+
+  @media (max-width: 768px) {
+    margin-right: 5px;
+    margin-left: 5px;
+  }
 `;
 
 const Section1TextContainer = styled.div`
@@ -99,6 +158,13 @@ const Section1TextContainer = styled.div`
   text-align: justify;
   font-size: 1.2rem;
   line-height: 1.8;
+
+  @media (max-width: 768px) {
+    padding: 15px;
+    font-size: 1rem; /* Tamaño de fuente reducido */
+    line-height: 1.5; /* Línea más compacta */
+    margin: 0 10px; /* Márgenes laterales */
+  }
 
   p {
     color: #F2E3D5; /* Color del texto */
@@ -112,15 +178,13 @@ const TextContainer = styled.div`
   font-size: 1.2rem;
   line-height: 1.8;
   padding: 20px;
-`;
 
-const ParagraphImage = styled.img`
-  width: 150px;
-  height: auto;
-  border-radius: 10px;
-  float: right;
-  margin: 0 0 10px 10px;
-  box-shadow: 0 0 10px rgba(0, 163, 224, 0.5);
+  @media (max-width: 768px) {
+    padding: 15px; /* Ajusta el padding en dispositivos móviles */
+    font-size: 1rem; /* Reduce ligeramente el tamaño de fuente */
+    line-height: 1.5; /* Reduce el line-height */
+    margin: 0 10px; /* Añade márgenes laterales */
+  }
 `;
 
 const StyledList = styled.ul`
@@ -130,14 +194,41 @@ const StyledList = styled.ul`
 
   & > li {
     margin-bottom: 10px;
-    color: #00A3E0;
+    color: #D35400;
     font-weight: bold;
     transition: color 0.3s ease;
 
     &:hover {
-      color: #F5A623;
+      color: #F39C12;
     }
   }
+
+  @media (max-width: 768px) {
+    padding-left: 15px; /* Reduce el padding en la lista */
+    margin: 10px 0; /* Reduce el margen en dispositivos móviles */
+    text-align: left; /* Alineación del texto a la izquierda */
+  }
+`;
+
+const Paragraph = styled.p`
+  color: #F2E3D5;
+  line-height: 1.8;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 768px) {
+    font-size: 1rem; /* Reduce el tamaño de fuente en móviles */
+    line-height: 1.5; /* Reduce el line-height en móviles */
+    margin: 5px 0; /* Ajusta márgenes */
+  }
+`;
+
+const ParagraphImage = styled.img`
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+  float: right;
+  margin: 0 0 10px 10px;
+  box-shadow: 0 0 10px rgba(0, 163, 224, 0.5);
 `;
 
 const Footer = styled.footer`
@@ -180,7 +271,7 @@ function App() {
       <ContentSection id="section3">
         <TextContainer>
           <ParagraphImage src="https://via.placeholder.com/150" alt="Paragraph Image Placeholder" />
-          <p>Main Features:</p>
+          <Paragraph>Main Features:</Paragraph>
           <StyledList>
             <li>Focus on developing the city with a more slow chill pace. You can choose how challenging it is.</li>
             <li>Play to min-max your logistics or to just see the story through. There is no incorrect way of playing.</li>
@@ -193,7 +284,7 @@ function App() {
       <ContentSection id="section4">
         <TextContainer>
           <ParagraphImage src="https://via.placeholder.com/150" alt="Paragraph Image Placeholder" />
-          <p>Loop of a run:</p>
+              <Paragraph>Loop of a run:</Paragraph>
           <StyledList>
             <li>Use drones for doing basic industry.</li>
             <li>Explore and expand.</li>
@@ -210,7 +301,7 @@ function App() {
       <ContentSection id="section5">
         <TextContainer>
           <ParagraphImage src="https://via.placeholder.com/150" alt="Paragraph Image Placeholder" />
-          <p>Development status:</p>
+          <Paragraph>Development status:</Paragraph>
           <StyledList>
             <li>Basic prototype developed, basic resource handling, basic logistics (drones + manual transports), Earth/Planet resource interchange, human behavior.</li>
             <li>Still missing: 2D/3D Art (using placeholders), UI/UX polish, Music and SFX, research tree, random events, independence mechanic and end game trigger.</li>
