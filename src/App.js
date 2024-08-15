@@ -143,8 +143,10 @@ const Section1TextBackground = styled.div`
   padding: 20px;
   border-radius: 10px;
   margin-top: 20px;
-  margin-right: 10px; /* Asegura margen a la derecha */
+  margin-right: 10px;
   margin-left: 10px;
+  width: 100%; /* Asegura que el fondo ocupe el ancho completo */
+  height: auto; /* Permite que la altura se ajuste al contenido */
 
   @media (max-width: 768px) {
     margin-right: 5px;
@@ -158,16 +160,17 @@ const Section1TextContainer = styled.div`
   text-align: justify;
   font-size: 1.2rem;
   line-height: 1.8;
+  padding-bottom: 20px; /* Añade un poco de espacio al final del texto */
 
   @media (max-width: 768px) {
     padding: 15px;
-    font-size: 1rem; /* Tamaño de fuente reducido */
-    line-height: 1.5; /* Línea más compacta */
-    margin: 0 10px; /* Márgenes laterales */
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0 10px;
   }
 
   p {
-    color: #F2E3D5; /* Color del texto */
+    color: #F2E3D5;
   }
 `;
 
@@ -240,13 +243,60 @@ const Footer = styled.footer`
   width: 100%;
 `;
 
+const DiscordButton = styled.a`
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #7289da; /* Color de Discord */
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    background-color: #5a6cb2;
+    transform: translateY(-2px);
+  }
+`;
+const FloatingDiscordButton = styled.a`
+  position: fixed;
+  bottom: 20px; /* Ajusta la distancia desde la parte inferior */
+  right: 20px; /* Ajusta la distancia desde la parte derecha */
+  padding: 12px 24px;
+  background-color: #7289da;
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */
+
+  &:hover {
+    background-color: #5a6cb2;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    padding: 10px 20px; /* Ajusta el padding en dispositivos móviles */
+    bottom: 15px; /* Ajusta la posición para pantallas pequeñas */
+    right: 15px; /* Ajusta la posición para pantallas pequeñas */
+  }
+`;
+
 function App() {
   return (
     <Container>
       <Navbar>
         <NavItem href="#section1">Start</NavItem>
         <NavItem href="#section3">Main Features</NavItem>
-        <NavItem href="#section4">Loop of a run</NavItem>
+        <NavItem href="#section4">Gameplay</NavItem>
         <NavItem href="#section5">Development Status</NavItem>
         <NavItem href="#section6">Help us!</NavItem>
       </Navbar>
@@ -256,22 +306,19 @@ function App() {
         <Image src="https://via.placeholder.com/600x300" alt="Game Image Placeholder" />
   <Section1TextBackground>
     <Section1TextContainer>
-      <p>
-        Upcoming sci-fi city builder with focus on surviving, developing, and getting independence from an ever changing Earth government.
-      </p>
-      <p>
-        Embark on an adventure for autonomy and self sufficiency by leaving the cradle of humanity behind and start a new colony on a remote place. Build, manufacture and survive while enduring the unearthly conditions of the place, and when the sentiment is ready, declare independence.
-      </p>
-      <p>
-        Independent skies is in a really early stage of development with some prototypes and builds for testing.
-      </p>
+<p>Join an extraordinary journey in the making! We're crafting an upcoming sci-fi city builder that challenges you to survive, develop, and ultimately gain independence from a constantly evolving Earth government.</p>
+
+<p>Imagine venturing beyond the cradle of humanity to establish a new colony in a remote and unforgiving environment. 
+You'll <b>build</b>, <b>manufacture</b>, and <b>adapt</b> to the harsh, otherworldly conditions while striving for self-sufficiency. And when the time is right, you’ll have the chance to declare your independence and shape the future under your own skies.</p>
+
+<p><b>Independent Skies</b> is in an early, concepting stage of development, with exciting prototypes and test builds underway. This is your opportunity to be part of something truly amazing and help shape this ambitious project. Don’t miss out— join us now and be part of something truly extraordinary!</p>
     </Section1TextContainer>
   </Section1TextBackground>
 </TitleSection>
       <ContentSection id="section3">
         <TextContainer>
           <ParagraphImage src="https://via.placeholder.com/150" alt="Paragraph Image Placeholder" />
-          <Paragraph>Main Features:</Paragraph>
+          <Paragraph>Main Features</Paragraph>
           <StyledList>
             <li>Focus on developing the city with a more slow chill pace. You can choose how challenging it is.</li>
             <li>Play to min-max your logistics or to just see the story through. There is no incorrect way of playing.</li>
@@ -284,11 +331,11 @@ function App() {
       <ContentSection id="section4">
         <TextContainer>
           <ParagraphImage src="https://via.placeholder.com/150" alt="Paragraph Image Placeholder" />
-              <Paragraph>Loop of a run:</Paragraph>
+              <Paragraph>Gameplay</Paragraph>
           <StyledList>
             <li>Use drones for doing basic industry.</li>
             <li>Explore and expand.</li>
-            <li>Get more complex resources from Earth through Rockets and alike.</li>
+            <li>Get more complex resources from Earth through Rockets and other transport.</li>
             <li>Prepare the terrain for humans with habitation, services and life support.</li>
             <li>Bring humans and watch them thrive. Protect them from the elements.</li>
             <li>With humans, unlock the more complex production and industries, like research.</li>
@@ -301,7 +348,7 @@ function App() {
       <ContentSection id="section5">
         <TextContainer>
           <ParagraphImage src="https://via.placeholder.com/150" alt="Paragraph Image Placeholder" />
-          <Paragraph>Development status:</Paragraph>
+          <Paragraph>Development status</Paragraph>
           <StyledList>
             <li>Basic prototype developed, basic resource handling, basic logistics (drones + manual transports), Earth/Planet resource interchange, human behavior.</li>
             <li>Still missing: 2D/3D Art (using placeholders), UI/UX polish, Music and SFX, research tree, random events, independence mechanic and end game trigger.</li>
@@ -313,17 +360,15 @@ function App() {
         <Section1TextBackground>
     <Section1TextContainer>
           <p>
-            Do you want to be part of Independent Skies’ development? You are welcome to help testing and give feedback!
-          </p>
-          <p>
-            Or maybe you just want to get news and updates of the development?
-          </p>
-          <p>
             Join our discord to know more: LINK
           </p>
         </Section1TextContainer>
         </Section1TextBackground>
       </ContentSection>
+
+      <FloatingDiscordButton href="https://discord.gg/aF989Kkf64" target="_blank" rel="noopener noreferrer">
+        Join our Discord to apply for testing
+      </FloatingDiscordButton>
 
       <Footer>
         &copy; 2024 All rights reserved.
