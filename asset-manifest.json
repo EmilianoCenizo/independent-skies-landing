@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/independent-skies-landing/static/css/main.85711c80.css",
-    "main.js": "/independent-skies-landing/static/js/main.199a06d4.js",
+    "main.js": "/independent-skies-landing/static/js/main.b8a61864.js",
     "static/js/453.a465a4fd.chunk.js": "/independent-skies-landing/static/js/453.a465a4fd.chunk.js",
     "static/media/screen2.png": "/independent-skies-landing/static/media/screen2.d362b5c4d636f2110363.png",
     "index.html": "/independent-skies-landing/index.html",
     "main.85711c80.css.map": "/independent-skies-landing/static/css/main.85711c80.css.map",
-    "main.199a06d4.js.map": "/independent-skies-landing/static/js/main.199a06d4.js.map",
+    "main.b8a61864.js.map": "/independent-skies-landing/static/js/main.b8a61864.js.map",
     "453.a465a4fd.chunk.js.map": "/independent-skies-landing/static/js/453.a465a4fd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.85711c80.css",
-    "static/js/main.199a06d4.js"
+    "static/js/main.b8a61864.js"
   ]
 }
