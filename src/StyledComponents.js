@@ -1,3 +1,4 @@
+// StyledComponents.js
 import styled from 'styled-components';
 import backgroundImage from './assets/images/screen2.png';
 
@@ -35,25 +36,20 @@ export const TitleSection = styled(Section)`
   background: url(${backgroundImage}) center center/cover no-repeat;
   color: #F2E3D5;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-  padding-top: 100px; /* Adjust the padding-top to clear the menu */
-  padding-bottom: 120px; /* Add extra space at the bottom */
+  padding-top: 100px;
 
   @media (max-width: 768px) {
-    padding-top: 120px; /* More space on smaller screens */
-    padding-bottom: 140px; /* Ensure the floating button doesn't cover the text */
+    padding-top: 120px;
   }
 
   @media (max-width: 480px) {
     padding-top: 140px;
-    padding-bottom: 160px;
   }
 
   @media (max-width: 375px) {
     padding-top: 150px;
-    padding-bottom: 180px;
   }
 `;
-
 
 export const TextBackground = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
@@ -76,18 +72,13 @@ export const Title = styled.h1`
 
   @media (max-width: 480px) {
     font-size: 1.6rem;
-    margin-top: 40px; 
+    margin-top: 40px;
   }
 
   @media (max-width: 375px) {
     font-size: 1.4rem;
     margin-top: 30px;
   }
-`;
-
-export const Subtitle = styled.h2`
-  font-size: 2rem;
-  color: #8B3A3A;
 `;
 
 export const Image = styled.img`
@@ -107,24 +98,96 @@ export const Navbar = styled.nav`
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #0A0A0A;
+  background-color: #0A0A0A; /* This background color is for desktop */
   padding: 8px 0;
   display: flex;
   justify-content: space-around;
   z-index: 1000;
   border-bottom: 2px solid #00A3E0;
 
-  @media (max-width: 375px) {
-    font-size: 0.7rem;
-    padding: 5px 0;
+  @media (max-width: 768px) {
+    display: none; /* Hide the navbar on mobile */
+  }
+`;
+
+export const MobileMenu = styled.div`
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 999;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+
+  @media (max-width: 768px) {
+    display: flex;
+    transform: ${({ isOpen }) => isOpen ? 'translateX(0)' : 'translateX(100%)'};
+  }
+`;
+
+export const HamburgerIcon = styled.div`
+  width: 30px;
+  height: 3px;
+  background-color: #FFFFFF;
+  margin: 6px 0;
+  transition: 0.4s;
+  cursor: pointer;
+
+  &:nth-child(1) {
+    transform: ${({ isOpen }) => isOpen ? 'rotate(-45deg) translate(-5px, 5px)' : 'rotate(0)'};
+  }
+
+  &:nth-child(2) {
+    opacity: ${({ isOpen }) => isOpen ? '0' : '1'};
+  }
+
+  &:nth-child(3) {
+    transform: ${({ isOpen }) => isOpen ? 'rotate(45deg) translate(-5px, -5px)' : 'rotate(0)'};
+  }
+`;
+
+export const HamburgerButton = styled.div`
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #0A0A0A; /* Black background for the button */
+  padding: 10px;
+  border-radius: 5px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1001;
+
+  @media (max-width: 768px) {
+    display: flex;
   }
 `;
 
 export const NavItem = styled.a`
   color: #FFFFFF;
-  margin: 0 10px;
+  margin: 10px 0;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #00A3E0;
+  }
+`;
+
+
+export const MobileNavItem = styled.a`
+  color: #FFFFFF;
+  margin: 20px 0;
+  text-decoration: none;
+  font-size: 1.5rem;
   cursor: pointer;
   transition: color 0.3s ease;
 
@@ -136,12 +199,11 @@ export const NavItem = styled.a`
 export const ContentSection = styled(Section)`
   flex-direction: column;
   text-align: center;
-  padding-top: 80px; /* Space for the header */
+  padding-top: 80px;
 
   @media (max-width: 768px) {
     overflow-y: auto;
-    padding-top: 100px; /* More space on smaller screens */
-    padding-bottom: 80px; /* Add space at the bottom to avoid overlap with the floating button */
+    padding-top: 100px;
   }
 `;
 

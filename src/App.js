@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Container,
   Navbar,
@@ -14,12 +14,35 @@ import {
   Paragraph,
   FloatingDiscordButton,
   Footer,
-  Title
+  Title,
+  HamburgerButton,
+  HamburgerIcon,
+  MobileMenu
 } from './StyledComponents';
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <Container>
+      <HamburgerButton onClick={toggleMenu}>
+        <HamburgerIcon isOpen={menuOpen} />
+        <HamburgerIcon isOpen={menuOpen} />
+        <HamburgerIcon isOpen={menuOpen} />
+      </HamburgerButton>
+
+      <MobileMenu isOpen={menuOpen}>
+        <NavItem href="#section1" onClick={toggleMenu}>Introduction</NavItem>
+        <NavItem href="#section3" onClick={toggleMenu}>Key Features</NavItem>
+        <NavItem href="#section4" onClick={toggleMenu}>Gameplay</NavItem>
+        <NavItem href="#section5" onClick={toggleMenu}>Development Status</NavItem>
+        <NavItem href="#section6" onClick={toggleMenu}>Join Us</NavItem>
+      </MobileMenu>
+
       <Navbar>
         <NavItem href="#section1">Introduction</NavItem>
         <NavItem href="#section3">Key Features</NavItem>
@@ -28,6 +51,8 @@ function App() {
         <NavItem href="#section6">Join Us</NavItem>
       </Navbar>
 
+      {/* The rest of your sections remain unchanged */}
+      {/* Example: */}
       <TitleSection id="section1">
         <Title>Independent Skies</Title>
         <Image src="https://via.placeholder.com/600x300" alt="Game Image Placeholder" />
@@ -39,6 +64,7 @@ function App() {
           </Section1TextContainer>
         </Section1TextBackground>
       </TitleSection>
+
 
       <ContentSection id="section3">
         <TextContainer>
@@ -84,7 +110,7 @@ function App() {
       <ContentSection id="section6">
         <Section1TextBackground>
           <Section1TextContainer>
-            <p>Interested in shaping the future of <b>Independent Skies</b>? Join our Discord to apply for testing, share feedback, and stay updated on development progress. Your insights could help bring this ambitious vision to life!</p>
+            <p>Interested in shaping the future of <b>Independent Skies</b>? Join our Discord to apply for testing, share feedback, and stay updated on development progress. We need your feedback to bring the project to life!</p>
           </Section1TextContainer>
         </Section1TextBackground>
       </ContentSection>
