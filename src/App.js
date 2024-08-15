@@ -19,13 +19,19 @@ import {
   HamburgerIcon,
   MobileMenu
 } from './StyledComponents';
+import Modal from './Modal'; // import the Modal component
 
 function App() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [modalImageSrc, setModalImageSrc] = useState('');
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+  const toggleModal = (src) => {
+    setModalImageSrc(src);
+    setModalOpen(!isModalOpen);
   };
+
+  const [menuOpen, setMenuOpen] = useState(false);
+  const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
     <Container>
@@ -51,11 +57,9 @@ function App() {
         <NavItem href="#section6">Join Us</NavItem>
       </Navbar>
 
-      {/* The rest of your sections remain unchanged */}
-      {/* Example: */}
       <TitleSection id="section1">
         <Title>Independent Skies</Title>
-        <Image src="https://via.placeholder.com/600x300" alt="Game Image Placeholder" />
+        <Image src="https://via.placeholder.com/600x300" alt="Game Image Placeholder" onClick={() => toggleModal("https://via.placeholder.com/600x300")} />
         <Section1TextBackground>
           <Section1TextContainer>
             <p>Embark on a journey to forge your destiny in <b>Independent Skies</b>. This upcoming sci-fi city builder is designed to test your survival instincts, strategic thinking, and willpower as you strive for independence from an ever-evolving Earth government.</p>
@@ -65,10 +69,9 @@ function App() {
         </Section1TextBackground>
       </TitleSection>
 
-
       <ContentSection id="section3">
         <TextContainer>
-          <ParagraphImage src="https://via.placeholder.com/150" alt="Paragraph Image Placeholder" />
+          <ParagraphImage src="https://via.placeholder.com/150" alt="Paragraph Image Placeholder" onClick={() => toggleModal("https://via.placeholder.com/150")} />
           <Paragraph>Key Features</Paragraph>
           <StyledList>
             <li>Build and develop your city at your own pace, with the flexibility to adjust the challenge level.</li>
@@ -81,7 +84,7 @@ function App() {
 
       <ContentSection id="section4">
         <TextContainer>
-          <ParagraphImage src="https://via.placeholder.com/150" alt="Paragraph Image Placeholder" />
+          <ParagraphImage src="https://via.placeholder.com/150" alt="Paragraph Image Placeholder"  onClick={() => toggleModal("https://via.placeholder.com/150")}/>
           <Paragraph>Gameplay</Paragraph>
           <StyledList>
             <li>Leverage drones to manage basic industries and expand your colony.</li>
@@ -98,7 +101,7 @@ function App() {
 
       <ContentSection id="section5">
         <TextContainer>
-          <ParagraphImage src="https://via.placeholder.com/150" alt="Paragraph Image Placeholder" />
+          <ParagraphImage src="https://via.placeholder.com/150" alt="Paragraph Image Placeholder"  onClick={() => toggleModal("https://via.placeholder.com/150")}/>
           <Paragraph>Development Status</Paragraph>
           <StyledList>
             <li>Basic prototype developed, featuring resource handling, logistics (drones + manual transports), and Earth/colony resource exchange.</li>
@@ -114,6 +117,8 @@ function App() {
           </Section1TextContainer>
         </Section1TextBackground>
       </ContentSection>
+
+      {isModalOpen && <Modal src={modalImageSrc} onClose={toggleModal}  onClick={() => toggleModal("https://via.placeholder.com/150")}/>}
 
       <FloatingDiscordButton href="https://discord.gg/aF989Kkf64" target="_blank" rel="noopener noreferrer">
         Join our Discord to apply for testing!
