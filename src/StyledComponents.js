@@ -35,20 +35,25 @@ export const TitleSection = styled(Section)`
   background: url(${backgroundImage}) center center/cover no-repeat;
   color: #F2E3D5;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-  padding-top: 100px;
+  padding-top: 100px; /* Adjust the padding-top to clear the menu */
+  padding-bottom: 120px; /* Add extra space at the bottom */
 
   @media (max-width: 768px) {
-    padding-top: 120px;
+    padding-top: 120px; /* More space on smaller screens */
+    padding-bottom: 140px; /* Ensure the floating button doesn't cover the text */
   }
 
   @media (max-width: 480px) {
     padding-top: 140px;
+    padding-bottom: 160px;
   }
 
   @media (max-width: 375px) {
     padding-top: 150px;
+    padding-bottom: 180px;
   }
 `;
+
 
 export const TextBackground = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
@@ -131,11 +136,12 @@ export const NavItem = styled.a`
 export const ContentSection = styled(Section)`
   flex-direction: column;
   text-align: center;
-  padding-top: 80px;
+  padding-top: 80px; /* Space for the header */
 
   @media (max-width: 768px) {
     overflow-y: auto;
-    padding-top: 100px;
+    padding-top: 100px; /* More space on smaller screens */
+    padding-bottom: 80px; /* Add space at the bottom to avoid overlap with the floating button */
   }
 `;
 
