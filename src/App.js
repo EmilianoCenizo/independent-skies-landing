@@ -15,9 +15,9 @@ import {
   FloatingDiscordButton,
   Footer,
   Title,
-  HamburgerButton,
-  HamburgerIcon,
-  MobileMenu
+  GallerySection,
+  GalleryGrid,
+  GalleryItem
 } from './StyledComponents';
 import Modal from './Modal'; // import the Modal component
 
@@ -35,26 +35,13 @@ function App() {
 
   return (
     <Container>
-      <HamburgerButton onClick={toggleMenu}>
-        <HamburgerIcon isOpen={menuOpen} />
-        <HamburgerIcon isOpen={menuOpen} />
-        <HamburgerIcon isOpen={menuOpen} />
-      </HamburgerButton>
-
-      <MobileMenu isOpen={menuOpen}>
-        <NavItem href="#section1" onClick={toggleMenu}>Introduction</NavItem>
-        <NavItem href="#section3" onClick={toggleMenu}>Key Features</NavItem>
-        <NavItem href="#section4" onClick={toggleMenu}>Gameplay</NavItem>
-        <NavItem href="#section5" onClick={toggleMenu}>Development Status</NavItem>
-        <NavItem href="#section6" onClick={toggleMenu}>Join Us</NavItem>
-      </MobileMenu>
-
       <Navbar>
         <NavItem href="#section1">Introduction</NavItem>
         <NavItem href="#section3">Key Features</NavItem>
         <NavItem href="#section4">Gameplay</NavItem>
         <NavItem href="#section5">Development Status</NavItem>
-        <NavItem href="#section6">Join Us</NavItem>
+        <NavItem href="#section6">Gallery</NavItem>
+        <NavItem href="#section7">Join Us</NavItem>
       </Navbar>
 
       <TitleSection id="section1">
@@ -109,8 +96,26 @@ function App() {
           </StyledList>
         </TextContainer>
       </ContentSection>
+      
+      <GallerySection id="section6">
+        <Title>Gallery</Title>
+        <GalleryGrid>
+          <GalleryItem onClick={() => toggleModal("https://via.placeholder.com/200")}>
+            <Image src="https://via.placeholder.com/200" alt="Gallery Image 1" />
+          </GalleryItem>
+          <GalleryItem onClick={() => toggleModal("https://via.placeholder.com/200")}>
+            <Image src="https://via.placeholder.com/200" alt="Gallery Image 2" />
+          </GalleryItem>
+          <GalleryItem onClick={() => toggleModal("https://via.placeholder.com/200")}>
+            <Image src="https://via.placeholder.com/200" alt="Gallery Image 3" />
+          </GalleryItem>
+          <GalleryItem onClick={() => toggleModal("https://via.placeholder.com/200")}>
+            <Image src="https://via.placeholder.com/200" alt="Gallery Image 4" />
+          </GalleryItem>
+        </GalleryGrid>
+      </GallerySection>
 
-      <ContentSection id="section6">
+      <ContentSection id="section7">
         <Section1TextBackground>
           <Section1TextContainer>
             <p>Interested in shaping the future of <b>Independent Skies</b>? Join our Discord to apply for testing, share feedback, and stay updated on development progress. We need your feedback to bring the project to life!</p>
@@ -118,7 +123,7 @@ function App() {
         </Section1TextBackground>
       </ContentSection>
 
-      {isModalOpen && <Modal src={modalImageSrc} onClose={toggleModal}  onClick={() => toggleModal("https://via.placeholder.com/150")}/>}
+      {isModalOpen && <Modal src={modalImageSrc} onClose={toggleModal} />}
 
       <FloatingDiscordButton href="https://discord.gg/aF989Kkf64" target="_blank" rel="noopener noreferrer">
         Join our Discord to apply for testing!

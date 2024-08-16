@@ -359,3 +359,34 @@ export const FloatingDiscordButton = styled.a`
     right: 15px;
   }
 `;
+export const GallerySection = styled.section`
+  padding: 60px 0; /* Add more padding to top and bottom */
+  background-color: #1B1B1B; 
+  color: #F2E3D5; 
+  text-align: center;
+  height: 100vh; /* Ensure the section is at least as tall as the viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-snap-align: start; /* Make sure the section snaps correctly */
+  overflow: hidden; /* Ensure the section behaves consistently */
+`;
+
+export const GalleryGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 20px;
+  margin-top: 20px;
+  padding: 0 20px;
+`;
+
+export const GalleryItem = styled.div`
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+
+  &:hover img {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+  }
+`;
