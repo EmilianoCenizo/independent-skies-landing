@@ -17,7 +17,11 @@ import {
   Title,
   GallerySection,
   GalleryGrid,
-  GalleryItem
+  GalleryItem,
+  HamburgerButton,
+  HamburgerIcon,
+  MobileMenu,
+  MobileNavItem
 } from './StyledComponents';
 import Modal from './Modal'; // import the Modal component
 
@@ -36,15 +40,30 @@ function App() {
   return (
     <Container>
       <Navbar>
-        <NavItem href="#section1">Introduction</NavItem>
-        <NavItem href="#section3">Key Features</NavItem>
-        <NavItem href="#section4">Gameplay</NavItem>
-        <NavItem href="#section5">Development Status</NavItem>
-        <NavItem href="#section6">Gallery</NavItem>
-        <NavItem href="#section7">Join Us</NavItem>
+        <NavItem href="#title">Introduction</NavItem>
+        <NavItem href="#features">Key Features</NavItem>
+        <NavItem href="#gameplay">Gameplay</NavItem>
+        <NavItem href="#status">Development Status</NavItem>
+        <NavItem href="#gallery">Gallery</NavItem>
+        <NavItem href="#cta">Join Us</NavItem>
       </Navbar>
 
-      <TitleSection id="section1">
+      <HamburgerButton onClick={toggleMenu}>
+        <HamburgerIcon isOpen={menuOpen} />
+        <HamburgerIcon isOpen={menuOpen} />
+        <HamburgerIcon isOpen={menuOpen} />
+      </HamburgerButton>
+
+      <MobileMenu isOpen={menuOpen}>
+        <MobileNavItem href="#title" onClick={toggleMenu}>Introduction</MobileNavItem>
+        <MobileNavItem href="#features" onClick={toggleMenu}>Key Features</MobileNavItem>
+        <MobileNavItem href="#gameplay" onClick={toggleMenu}>Gameplay</MobileNavItem>
+        <MobileNavItem href="#status" onClick={toggleMenu}>Development Status</MobileNavItem>
+        <MobileNavItem href="#gallery" onClick={toggleMenu}>Gallery</MobileNavItem>
+        <MobileNavItem href="#cta" onClick={toggleMenu}>Join Us</MobileNavItem>
+      </MobileMenu>
+
+      <TitleSection id="title">
         <Title>Independent Skies</Title>
         <Image src="https://via.placeholder.com/600x300" alt="Game Image Placeholder" onClick={() => toggleModal("https://via.placeholder.com/600x300")} />
         <Section1TextBackground>
@@ -56,7 +75,7 @@ function App() {
         </Section1TextBackground>
       </TitleSection>
 
-      <ContentSection id="section3">
+      <ContentSection id="features">
         <TextContainer>
           <ParagraphImage src="https://via.placeholder.com/150" alt="Paragraph Image Placeholder" onClick={() => toggleModal("https://via.placeholder.com/150")} />
           <Paragraph>Key Features</Paragraph>
@@ -69,7 +88,7 @@ function App() {
         </TextContainer>
       </ContentSection>
 
-      <ContentSection id="section4">
+      <ContentSection id="gameplay">
         <TextContainer>
           <ParagraphImage src="https://via.placeholder.com/150" alt="Paragraph Image Placeholder"  onClick={() => toggleModal("https://via.placeholder.com/150")}/>
           <Paragraph>Gameplay</Paragraph>
@@ -86,7 +105,7 @@ function App() {
         </TextContainer>
       </ContentSection>
 
-      <ContentSection id="section5">
+      <ContentSection id="status">
         <TextContainer>
           <ParagraphImage src="https://via.placeholder.com/150" alt="Paragraph Image Placeholder"  onClick={() => toggleModal("https://via.placeholder.com/150")}/>
           <Paragraph>Development Status</Paragraph>
@@ -96,8 +115,8 @@ function App() {
           </StyledList>
         </TextContainer>
       </ContentSection>
-      
-      <GallerySection id="section6">
+
+      <GallerySection id="gallery">
         <Title>Gallery</Title>
         <GalleryGrid>
           <GalleryItem onClick={() => toggleModal("https://via.placeholder.com/200")}>
@@ -115,7 +134,7 @@ function App() {
         </GalleryGrid>
       </GallerySection>
 
-      <ContentSection id="section7">
+      <ContentSection id="cta">
         <Section1TextBackground>
           <Section1TextContainer>
             <p>Interested in shaping the future of <b>Independent Skies</b>? Join our Discord to apply for testing, share feedback, and stay updated on development progress. We need your feedback to bring the project to life!</p>

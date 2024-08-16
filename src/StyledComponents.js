@@ -156,7 +156,7 @@ export const HamburgerButton = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #0A0A0A; /* Black background for the button */
+  background-color: #000; /* Black background */
   padding: 10px;
   border-radius: 5px;
   position: fixed;
@@ -168,6 +168,7 @@ export const HamburgerButton = styled.div`
     display: flex;
   }
 `;
+
 
 export const NavItem = styled.a`
   color: #FFFFFF;
