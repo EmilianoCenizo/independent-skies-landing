@@ -83,8 +83,11 @@ export const Title = styled.h1`
 
 export const Image = styled.img`
   max-width: 100%;
-  height: auto;
-  margin-top: 20px;
+  max-height: 300px; /* Restrict the height */
+  object-fit: contain; /* Maintains aspect ratio and centers the image */
+  margin: auto; /* Centers the image horizontally and vertically */
+  display: block;
+
   border: 3px solid #8B3A3A;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(211, 84, 0, 0.7);
