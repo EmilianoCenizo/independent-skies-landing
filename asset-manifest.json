@@ -1,16 +1,36 @@
 {
   "files": {
     "main.css": "/independent-skies-landing/static/css/main.85711c80.css",
-    "main.js": "/independent-skies-landing/static/js/main.913ec4af.js",
+    "main.js": "/independent-skies-landing/static/js/main.0bda6cfe.js",
     "static/js/453.a465a4fd.chunk.js": "/independent-skies-landing/static/js/453.a465a4fd.chunk.js",
+    "static/media/anim1.gif": "/independent-skies-landing/static/media/anim1.9c602704941ec347a4c8.gif",
+    "static/media/anim2.gif": "/independent-skies-landing/static/media/anim2.9d901a3ddc14da937ecb.gif",
+    "static/media/anim5.gif": "/independent-skies-landing/static/media/anim5.1149002f1721e32af1ff.gif",
+    "static/media/anim3.gif": "/independent-skies-landing/static/media/anim3.3cb4a311ef137c87c470.gif",
+    "static/media/screen002.png": "/independent-skies-landing/static/media/screen002.5a8e020431f4d62da717.png",
+    "static/media/screen001.png": "/independent-skies-landing/static/media/screen001.362f4c379c85d2337f0a.png",
+    "static/media/screen003.png": "/independent-skies-landing/static/media/screen003.9c0bf1bfaa078f55c5cc.png",
     "static/media/screen2.png": "/independent-skies-landing/static/media/screen2.d362b5c4d636f2110363.png",
+    "static/media/screen006.png": "/independent-skies-landing/static/media/screen006.25686291e265b860184f.png",
+    "static/media/screen1.png": "/independent-skies-landing/static/media/screen1.065757701493ce45b3e3.png",
+    "static/media/screen010.png": "/independent-skies-landing/static/media/screen010.e04e1d9ee9eec1f1e1ba.png",
+    "static/media/screen011.png": "/independent-skies-landing/static/media/screen011.8b34336495d9bbdb82c6.png",
+    "static/media/screen014.png": "/independent-skies-landing/static/media/screen014.c1746e2c60165b616452.png",
+    "static/media/screen004.png": "/independent-skies-landing/static/media/screen004.88551396c55e4f852605.png",
+    "static/media/screen008.png": "/independent-skies-landing/static/media/screen008.f1249823b4c72dd7c7a2.png",
+    "static/media/screen012.png": "/independent-skies-landing/static/media/screen012.e466425ed84013bf0046.png",
+    "static/media/screen009.png": "/independent-skies-landing/static/media/screen009.c727e434bd0a19115031.png",
+    "static/media/screen013.png": "/independent-skies-landing/static/media/screen013.2a2405ea4ccf8a5d3121.png",
+    "static/media/anim4.gif": "/independent-skies-landing/static/media/anim4.e17214667f4ca0e05b4e.gif",
+    "static/media/screen007.png": "/independent-skies-landing/static/media/screen007.520d59dbfc3b40014e94.png",
+    "static/media/screen005.png": "/independent-skies-landing/static/media/screen005.9ac34acdca714d4b2581.png",
     "index.html": "/independent-skies-landing/index.html",
     "main.85711c80.css.map": "/independent-skies-landing/static/css/main.85711c80.css.map",
-    "main.913ec4af.js.map": "/independent-skies-landing/static/js/main.913ec4af.js.map",
+    "main.0bda6cfe.js.map": "/independent-skies-landing/static/js/main.0bda6cfe.js.map",
     "453.a465a4fd.chunk.js.map": "/independent-skies-landing/static/js/453.a465a4fd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.85711c80.css",
-    "static/js/main.913ec4af.js"
+    "static/js/main.0bda6cfe.js"
   ]
 }
